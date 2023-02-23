@@ -23,7 +23,7 @@ interface AssetViewProps {
 }
 
 function Asset({ ual, chainKey, asset }: AssetViewProps) {
-  const image = asset.data.img;
+  const image = asset.data.img || asset.data.image || asset.data.glbthumb;
   const video = asset.data.video;
   const collection = asset.collection;
 
