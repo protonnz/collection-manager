@@ -3,7 +3,7 @@ import { WebAuth } from '@proton/ual-webauth';
 import { Wax } from '@alienworlds/ual-wax';
 
 export default {
-/*  
+  /*  
   eos: {
     name: 'EOS',
     imageUrl: 'https://bloks.io/img/chains/eos.png',

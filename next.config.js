@@ -16,7 +16,7 @@ const nextConfig = {
       'gateway.pinata.cloud',
       'ipfs.io',
       'proton.mypinata.cloud',
-      'ipfs.glbdex.com',      
+      'ipfs.glbdex.com',
     ],
   },
 };
