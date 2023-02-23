@@ -21,6 +21,7 @@ export const authenticators = Object.keys(chainsConfig).reduce(
             },
             selectorOptions: {
               appName,
+              dialogRootNode: '#__next',
             },
           })
       ),
