@@ -25,7 +25,7 @@ interface TemplateViewProps {
 }
 
 function Template({ ual, chainKey, template }: TemplateViewProps) {
-  const image = template.immutable_data.img;
+  const image = template.immutable_data.img || template.immutable_data.image;
   const video = template.immutable_data.video;
   const collection = template.collection;
 

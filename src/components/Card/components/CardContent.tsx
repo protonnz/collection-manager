@@ -5,6 +5,7 @@ interface CardContentProps {
   id: string;
   image: string;
   video: string;
+  audio: string;
   title: string;
   subtitle: string;
   withThumbnail: boolean;
@@ -14,6 +15,7 @@ export function CardContent({
   id,
   image,
   video,
+  audio,
   title,
   subtitle,
   withThumbnail,
@@ -52,6 +54,12 @@ export function CardContent({
             <div className="w-full h-full flex items-center justify-center text-white">
               <ImageSquare size={64} />
             </div>
+          )}
+
+          {audio && (
+            <audio className="w-full h-full">
+              <source src={audio} type="audio/mpeg" />
+            </audio>
           )}
         </div>
       )}

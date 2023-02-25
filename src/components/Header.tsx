@@ -21,9 +21,14 @@ interface HeaderSearchProps {
   children?: ReactNode;
 }
 
+interface HeaderAudioProps {
+  audioIpfs?: string;
+}
+
 interface HeaderBannerProps {
   imageIpfs?: string;
   videoIpfs?: string;
+  audioIpfs?: string;
 }
 
 function HeaderRoot({ border, breadcrumb, children }: HeaderRootProps) {
@@ -80,6 +85,20 @@ function HeaderSearch({ children }: HeaderSearchProps) {
   return <div className="flex-1 md:max-w-[16rem]">{children}</div>;
 }
 
+function HeaderAudio({ audioIpfs }: HeaderAudioProps) {
+  return (
+    <div className="flex-1 mt-4 md:max-w-[16rem]">
+      {audioIpfs ? (
+        <audio controls>
+          <source src={`${ipfsEndpoint}/${audioIpfs}`} type="audio/mp3" />
+        </audio>
+      ) : (
+        ' '
+      )}
+    </div>
+  );
+}
+
 function HeaderBanner({ imageIpfs, videoIpfs }: HeaderBannerProps) {
   return (
     <div className="flex-1">
@@ -130,4 +149,5 @@ export const Header = {
   Content: HeaderContent,
   Banner: HeaderBanner,
   Search: HeaderSearch,
+  Audio: HeaderAudio,
 };

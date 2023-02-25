@@ -24,6 +24,7 @@ interface AssetViewProps {
 
 function Asset({ ual, chainKey, asset }: AssetViewProps) {
   const image = asset.data.img || asset.data.image || asset.data.glbthumb;
+  const audio = asset.data.song || asset.data.audio;
   const video = asset.data.video;
   const collection = asset.collection;
 
@@ -56,6 +57,7 @@ function Asset({ ual, chainKey, asset }: AssetViewProps) {
           title={asset.name}
           subtitle={`Asset #${asset.asset_id}`}
         >
+          <Header.Audio audioIpfs={audio} />
           {hasAuthorization && !asset.burned_by_account && (
             <Link
               href={`/${chainKey}/collection/${collection.collection_name}/asset/${asset.asset_id}/edit`}
