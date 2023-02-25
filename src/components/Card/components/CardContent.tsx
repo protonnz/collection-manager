@@ -1,11 +1,13 @@
 import Image from 'next/image';
 import { ImageSquare } from 'phosphor-react';
+import { useEffect, useState, useLayoutEffect, useRef } from 'react';
 
 interface CardContentProps {
   id: string;
   image: string;
   video: string;
   audio: string;
+  model: string;
   title: string;
   subtitle: string;
   withThumbnail: boolean;
@@ -16,6 +18,7 @@ export function CardContent({
   image,
   video,
   audio,
+  model,
   title,
   subtitle,
   withThumbnail,

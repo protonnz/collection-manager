@@ -25,10 +25,17 @@ interface HeaderAudioProps {
   audioIpfs?: string;
 }
 
+interface HeaderModelProps {
+  modelIpfs?: string;
+}
+
 interface HeaderBannerProps {
   imageIpfs?: string;
   videoIpfs?: string;
   audioIpfs?: string;
+  modelIpfs?: string;
+  title?: string;
+  subtitle?: string;
 }
 
 function HeaderRoot({ border, breadcrumb, children }: HeaderRootProps) {
@@ -99,11 +106,49 @@ function HeaderAudio({ audioIpfs }: HeaderAudioProps) {
   );
 }
 
-function HeaderBanner({ imageIpfs, videoIpfs }: HeaderBannerProps) {
+function HeaderBanner({
+  imageIpfs,
+  videoIpfs,
+  modelIpfs,
+  title,
+}: HeaderBannerProps) {
   return (
     <div className="flex-1">
       <div className="relative w-full md:max-w-[14rem] lg:max-w-sm mx-auto aspect-square">
-        {imageIpfs ? (
+        {modelIpfs ? (
+          <>
+            <div className="flex-1 justify-center">
+              <model-viewer
+                src={`${ipfsEndpoint}/${modelIpfs}`}
+                poster={`${ipfsEndpoint}/${imageIpfs}`}
+                alt={`${title} 3D model`}
+                auto-play
+                ar-modes="webxr scene-viewer quick-look"
+                environment-image="neutral"
+                quick-look-browsers="safari chrome"
+                auto-rotate
+                camera-controls
+                shadow-intensity="1"
+                shadow-softness="1"
+                style={{
+                  height: '480px',
+                  width: '480px',
+                }}
+              />
+            </div>
+            <div className="absolute blur-3xl -z-10 w-[calc(100%+4rem)] h-[calc(100%+4rem)] -left-[2rem] -top-[2rem] hidden md:block">
+              <Image
+                src={`${ipfsEndpoint}/${imageIpfs}`}
+                fill
+                className="object-contain"
+                quality={1}
+                alt=""
+                sizes="max-w-2xl"
+                priority
+              />
+            </div>
+          </>
+        ) : imageIpfs ? (
           <>
             <Image
               src={`${ipfsEndpoint}/${imageIpfs}`}

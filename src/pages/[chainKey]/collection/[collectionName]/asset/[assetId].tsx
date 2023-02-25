@@ -25,6 +25,7 @@ interface AssetViewProps {
 function Asset({ ual, chainKey, asset }: AssetViewProps) {
   const image = asset.data.img || asset.data.image || asset.data.glbthumb;
   const audio = asset.data.song || asset.data.audio;
+  const model = asset.data.model || asset.data.glb;
   const video = asset.data.video;
   const collection = asset.collection;
 
@@ -67,7 +68,7 @@ function Asset({ ual, chainKey, asset }: AssetViewProps) {
             </Link>
           )}
         </Header.Content>
-        <Header.Banner imageIpfs={image} videoIpfs={video} />
+        <Header.Banner imageIpfs={image} videoIpfs={video} modelIpfs={model} />
       </Header.Root>
 
       <Tab.Group>

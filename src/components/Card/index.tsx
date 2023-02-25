@@ -8,6 +8,7 @@ interface CardProps extends HTMLAttributes<HTMLElement> {
   image?: string;
   audio?: string;
   video?: string;
+  model?: string;
   title?: string;
   subtitle?: string;
   withThumbnail?: boolean;
@@ -19,6 +20,7 @@ export function Card({
   image,
   audio,
   video,
+  model,
   title,
   subtitle,
   withThumbnail = true,
@@ -36,6 +38,7 @@ export function Card({
           image={image}
           video={video}
           audio={audio}
+          model={model}
           title={title}
           subtitle={subtitle}
           withThumbnail={withThumbnail}
@@ -51,6 +54,7 @@ export function Card({
         image={image}
         video={video}
         audio={audio}
+        model={model}
         title={title}
         subtitle={subtitle}
         withThumbnail={withThumbnail}

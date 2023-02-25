@@ -16,6 +16,7 @@ import '@utils/yupMethods';
 import chainsConfig from '@configs/chainsConfig';
 
 import '@styles/globals.css';
+import Script from 'next/script';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -27,6 +28,12 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="viewport-fit=cover" />
       </Head>
+      <Script
+        async
+        strategy="afterInteractive"
+        type="module"
+        src="https://unpkg.com/@google/model-viewer@^2.1.1/dist/model-viewer.min.js"
+      />
 
       <UALProvider
         appName={appName}
