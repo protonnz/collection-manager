@@ -355,8 +355,10 @@ function Transfer({ ual }) {
                           id={asset.template_mint}
                           onClick={() => handleAssetSelection(asset)}
                           image={
-                            asset.data['image']
-                              ? `${ipfsEndpoint}/${asset.data['image']}`
+                            asset.data['image'] || asset.data['glbthumb']
+                              ? `${ipfsEndpoint}/${
+                                  asset.data['image'] || asset.data['glbthumb']
+                                }`
                               : ''
                           }
                           video={
@@ -444,8 +446,10 @@ function Transfer({ ual }) {
                                 id={asset.template_mint}
                                 onClick={() => handleAssetSelection(asset)}
                                 image={
-                                  asset.data.image
-                                    ? `${ipfsEndpoint}/${asset.data.image}`
+                                  asset.data.image || asset.data.glbthumb
+                                    ? `${ipfsEndpoint}/${
+                                        asset.data.image || asset.data.glbthumb
+                                      }`
                                     : ''
                                 }
                                 video={
