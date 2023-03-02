@@ -1,6 +1,6 @@
 # NFT Collection Manager
 
-Forked by Proton NZ - Added support for audio, 3d models, webauth etc
+__Forked by Proton NZ - Added support for audio, 3d models, webauth etc__
 
 An NFT Collection Manager for the EOS/AtomicAssets ecosystem built by [FACINGS](https://facings.io) as per our [ENF Grant Proposal](https://github.com/eosnetworkfoundation/grant-framework/blob/main/applications/facings-nft-collection-manager.md).
 
